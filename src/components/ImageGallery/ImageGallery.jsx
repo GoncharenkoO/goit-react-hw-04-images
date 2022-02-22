@@ -16,7 +16,6 @@ function ImageGallery({ images, onOpenModal }) {
 
 export default memo(ImageGallery);
 
-ImageGallery.defaultProps = {};
 ImageGallery.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
