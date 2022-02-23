@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ToastContainer } from 'react-toastify';
 import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
@@ -64,14 +64,14 @@ const SearchImage = () => {
     }));
   };
 
-  const onLoadMore = () => setPage(prevState => prevState + 1);
+  const onLoadMore = useCallback(() => setPage(prevState => prevState + 1), []);
 
-  const showModal = content => {
+  const showModal = useCallback(content => {
     setModal({
       open: true,
       content,
     });
-  };
+  }, []);
 
   const hideModal = () => {
     setModal({
